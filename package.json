@@ -1,0 +1,22 @@
+{
+  "name": "discord-extension",
+  "module": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.js",
+    "build": "bun build index.js --outdir . --target bun --external discord.js --external node-fetch --minify",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.3",
+    "node-fetch": "^3.3.2"
+  }
+}
