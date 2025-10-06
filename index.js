@@ -1,3 +1,4 @@
+import http from "http";
 import { Client, GatewayIntentBits, Partials } from "discord.js";
 import { DISCORD_TOKEN, BOT_CONFIG } from "./src/config.js";
 import { commands } from "./src/commands/commands.js";
@@ -41,3 +42,12 @@ client.on("messageCreate", async (message) => {
 
 client.login(DISCORD_TOKEN);
 
+server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Xerochat is running\n");
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
